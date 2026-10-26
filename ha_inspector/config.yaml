@@ -1,0 +1,31 @@
+name: HA Inspector
+version: 0.1.0
+slug: ha_inspector
+description: Authenticated inspection of selected Home Assistant context
+url: https://github.com/BViksa/ha-inspector-ha
+arch:
+- aarch64
+startup: application
+boot: manual
+backup: cold
+init: false
+apparmor: true
+homeassistant_api: true
+hassio_api: true
+hassio_role: default
+map:
+- type: homeassistant_config
+  read_only: true
+ports:
+  8097/tcp: null
+ports_description:
+  8097/tcp: HTTPS inspection API (owner enables LAN mapping)
+options:
+  api_token: ''
+  tls_server_name: ''
+  log_level: info
+schema:
+  api_token: password
+  tls_server_name: str
+  log_level: list(info|warning)
+image: ghcr.io/bviksa/ha-inspector

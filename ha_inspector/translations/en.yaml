@@ -1,0 +1,12 @@
+configuration:
+  api_token:
+    name: Inspection API token
+    description: A locally generated canonical base64url encoding of 32 random bytes. Never paste it into chat.
+  tls_server_name:
+    name: Stable LAN name or IP
+    description: Certificate name verified by the dedicated laptop client. An existing identity is never replaced automatically.
+  log_level:
+    name: Log level
+    description: Operational categories only. The public certificate fingerprint is always shown.
+network:
+  8097/tcp: HTTPS inspection API. Leave disabled until certificate verification and owner setup are complete.
